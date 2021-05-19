@@ -1,0 +1,23 @@
+.profile {
+  display: flex;
+  margin-bottom: 5rem;
+  .introduce {
+    display: flex;
+    flex-direction: column;
+    color : var(--textNormal);
+    .title {
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .description{
+      color : var(--textSub);
+    }
+  }
+  .chips {
+    color : var(--textNormal);
+    cursor: pointer;
+    padding: 0.25em 0.5em;
+    background-color: #2EDAC3;
+    border-radius: 16px;
+  }
+}

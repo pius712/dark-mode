@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from "react";
+import styles from "App.module.scss";
+import "./styles/global.scss";
+import "./styles/reset.scss";
+import useTheme from "hooks/useTheme";
+import Profile from "components/common/profile";
+import ThemeSwitch from "components/common/theme-switch";
+const App = () => {
+  const [theme, onToggle] = useTheme();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className={styles["main-container"]}>
+        <ThemeSwitch checked={theme === "dark"} toggleSwitch={onToggle} />
+        <div className={styles["profile-container"]}>
+          <Profile />
+        </div>
+      </div>
+    </>
   );
-}
+};
 
 export default App;

@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Profile from 'components/profile';
+import Profile from 'components/common/profile';
 import { css, Global, ThemeProvider } from '@emotion/react';
 import ResetStyle from 'styles/Reset';
 import GlobalStyle from 'styles/GlobalStyle';
 import { default as THEME } from 'styles/Theme';
 import useTheme from 'hooks/useTheme';
-import ThemeSwitch from 'components/theme-switch';
+import ThemeSwitch from 'components/common/theme-switch';
 
 const App = () => {
   const [theme, onToggle] = useTheme();

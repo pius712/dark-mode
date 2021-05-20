@@ -1,5 +1,5 @@
 
-interface Theme {
+export interface Theme {
     bgColor: string;
     fontColor: string;
 }

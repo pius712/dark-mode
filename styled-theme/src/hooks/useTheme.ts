@@ -3,9 +3,10 @@ import {useCallback, useEffect, useState} from "react";
 const useTheme = (): [typeof theme, typeof toggleTheme] =>{
 
     const getInitialTheme = useCallback(()  =>{
-        let theme = window.localStorage.getItem('app_theme');
+        let theme = window.localStorage.getItem('app_theme') as 'light' | 'dark' | null;
+        const INVALID_THEME = theme !== 'light' && theme !== 'dark';
 
-        if(!theme) {
+        if(!theme || INVALID_THEME) {
             const { matches } = window.matchMedia('(prefers-color-scheme: dark)');
             theme = matches ? 'dark' : 'light';
         }
